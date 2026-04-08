@@ -137,7 +137,6 @@ const SecondaryButton = styled(PrimaryButton)`
   }
 `;
 
-// NEW: Search Bar Styles
 const SearchContainer = styled.div`
   position: relative;
   margin-top: 0.5rem;
@@ -229,7 +228,7 @@ const NotesSection = ({ dateRange, notes, setNotes }) => {
   const [editingId, setEditingId] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('Personal');
   
-  // NEW: State for the search bar
+  
   const [searchQuery, setSearchQuery] = useState('');
 
   const getSelectedDateText = () => {
@@ -288,11 +287,10 @@ const NotesSection = ({ dateRange, notes, setNotes }) => {
 
   const isInputDisabled = !dateRange.start && !editingId;
 
-  // NEW: The Filtering Logic!
-  // We take the total notes array, and filter it down before we map over it.
+  
   const filteredNotes = notes.filter(note => {
     const query = searchQuery.toLowerCase();
-    // It will return true (and keep the note) if the text, author, OR category matches the search.
+    
     return (
       note.text.toLowerCase().includes(query) ||
       note.author.toLowerCase().includes(query) ||
@@ -338,7 +336,7 @@ const NotesSection = ({ dateRange, notes, setNotes }) => {
         </ButtonGroup>
       </FormContainer>
 
-      {/* NEW: The Search Bar UI */}
+      
       {notes.length > 0 && (
         <SearchContainer>
           <SearchIconWrapper>
@@ -363,7 +361,7 @@ const NotesSection = ({ dateRange, notes, setNotes }) => {
             No matching notes found for "{searchQuery}".
           </div>
         ) : (
-          /* Notice we map over filteredNotes instead of notes! */
+
           filteredNotes.map(note => {
             const catData = CATEGORIES[note.category] || CATEGORIES['Personal']; 
             return (

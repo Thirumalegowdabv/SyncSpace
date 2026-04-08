@@ -63,9 +63,7 @@ const HeroImage = ({ currentMonth }) => {
   const monthName = format(currentMonth, 'MMMM');
   const year = format(currentMonth, 'yyyy');
   
-  // Creative Liberty: Dynamic Image Generation!
-  // We use the month index and year to create a unique "seed". 
-  // This ensures the image changes every month, but stays consistent if you go back to a month you already visited.
+  
   const monthIndex = currentMonth.getMonth();
   const seed = `${year}-${monthIndex}`;
   const imageUrl = `https://picsum.photos/seed/${seed}/800/1000`;

@@ -6,7 +6,7 @@ import {
   isBefore, isWithinInterval
 } from 'date-fns';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion'; // NEW IMPORTS
+import { motion, AnimatePresence } from 'framer-motion'; 
 
 // --- Styled Components ---
 const Header = styled.div`
@@ -99,7 +99,7 @@ const Cell = styled.div`
 
 // --- Main Component ---
 const CalendarGrid = ({ currentMonth, setCurrentMonth, dateRange, setDateRange }) => {
-  // NEW: State to track if we clicked Next (1) or Prev (-1) for the animation
+ 
   const [direction, setDirection] = useState(0);
 
   const nextMonth = () => {
@@ -181,11 +181,11 @@ const CalendarGrid = ({ currentMonth, setCurrentMonth, dateRange, setDateRange }
       
       {renderDays()}
       
-      {/* NEW: The Animation Wrapper */}
+      
       <GridContainer>
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
-            key={currentMonth.toISOString()} /* This key tells framer-motion when to trigger the animation */
+            key={currentMonth.toISOString()} 
             initial={{ opacity: 0, x: direction > 0 ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: direction > 0 ? -50 : 50 }}

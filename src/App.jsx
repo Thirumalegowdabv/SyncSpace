@@ -3,7 +3,7 @@ import WallCalendar from './components/Calendar/WallCalendar';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Calendar as CalendarIcon } from 'lucide-react'; // NEW: Imported an icon for the logo
 
-// 1. Define our two themes
+
 const lightTheme = {
   background: 'linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%)',
   textColor: '#334155',
@@ -18,7 +18,6 @@ const darkTheme = {
   calendarShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.05)'
 };
 
-// 2. Global CSS
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -45,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// --- NEW: Logo & Title Styled Components ---
+
 const AppHeader = styled.div`
   display: flex;
   align-items: center;
@@ -98,7 +97,7 @@ function App() {
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <GlobalStyle />
       
-      {/* NEW: The SyncSpace Header */}
+      
       <AppHeader>
         <LogoIcon>
           <CalendarIcon size={24} />

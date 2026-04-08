@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Moon, Sun } from 'lucide-react'; // NEW: Imported icons
+import { Moon, Sun } from 'lucide-react'; 
 import HeroImage from './HeroImage';
 import CalendarGrid from './CalendarGrid';
 import NotesSection from './NotesSection';
@@ -52,7 +52,7 @@ const Divider = styled.hr`
   transition: border-color 0.4s ease;
 `;
 
-// NEW: The Theme Toggle Button
+
 const ThemeToggle = styled.button`
   position: absolute;
   top: 1rem;
@@ -78,7 +78,6 @@ const ThemeToggle = styled.button`
 
 // --- Main Component ---
 
-// NEW: Accept the props we passed from App.jsx
 const WallCalendar = ({ isDarkMode, toggleTheme }) => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [dateRange, setDateRange] = useState({ start: null, end: null });
@@ -99,7 +98,7 @@ const WallCalendar = ({ isDarkMode, toggleTheme }) => {
   return (
     <CalendarContainer>
       
-      {/* NEW: The floating toggle button */}
+   
       <ThemeToggle onClick={toggleTheme} title="Toggle Dark Mode">
         {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
       </ThemeToggle>
