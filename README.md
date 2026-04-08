@@ -66,4 +66,4 @@ To get a local copy up and running, follow these simple steps:
 
 ---
 
-**Crafted with focus  by Thejas**
+**Crafted with focus  by Thirumale Gowda BV**
